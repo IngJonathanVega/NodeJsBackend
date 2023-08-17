@@ -1,0 +1,11 @@
+{
+  "name": "@jvega/services",
+  "version": "0.0.0",
+  "exports": "./src/index.ts",
+  "main": "./src/index.ts",
+  "private": true,
+  "dependencies": {
+    "@jvega/repositories": "*",
+    "@jvega/common": "*"
+  }
+}

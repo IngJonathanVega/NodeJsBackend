@@ -1,0 +1,15 @@
+{
+  "name": "@jvega/workspace",
+  "private": true,
+  "description": "Yarn Workspace Project",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^7.1.5",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@jvega/api",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "license": "ISC",
+  "exports": "./src/index.ts",
+  "main": "./src/index.ts",
+  "scripts": {
+    "serve": "ts-node --esm src/index.ts"
+  },
+  "dependencies": {
+    "@jvega/common": "*",
+    "@jvega/repositories": "*",
+    "@types/node": "^20.5.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
