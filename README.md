@@ -10,4 +10,7 @@
 //Zod - validaciones
 //Express - api
 //tsoa - Swagger, @controller 
+//typeOrm
+
+
 

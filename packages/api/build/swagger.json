@@ -27,6 +27,13 @@
 					"username": {
 						"type": "string"
 					},
+					"age": {
+						"type": "number",
+						"format": "double"
+					},
+					"lastName": {
+						"type": "string"
+					},
 					"name": {
 						"type": "string"
 					},
@@ -118,7 +125,12 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"$ref": "#/components/schemas/UserDto"
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/UserDto"
+										}
+									],
+									"nullable": true
 								}
 							}
 						}
@@ -133,14 +145,6 @@
 						"schema": {
 							"format": "double",
 							"type": "number"
-						}
-					},
-					{
-						"in": "query",
-						"name": "name",
-						"required": false,
-						"schema": {
-							"type": "string"
 						}
 					}
 				]

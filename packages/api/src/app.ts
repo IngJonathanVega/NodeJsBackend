@@ -1,7 +1,11 @@
+import { startAppDataSource } from '@jvega/services'
 import { RegisterRoutes } from '../build/routes'
 import express, { json, urlencoded, Response as ExResponse, Request as ExRequest, NextFunction } from 'express'
 import swaggerUi from 'swagger-ui-express'
 import { ValidateError } from 'tsoa'
+
+// establish database connection
+startAppDataSource()
 
 export const app = express()
 

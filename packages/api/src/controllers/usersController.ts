@@ -10,24 +10,32 @@ import {
   SuccessResponse,
   Middlewares
 } from 'tsoa'
-import { UsersService } from '@jvega/services'
+import { ServicesConfiguration, UsersService } from '@jvega/services'
 import { UserDto, userSchema } from '@jvega/common'
 import { RequestHandler } from 'express'
 import { validateSchema } from '../middleware/validationSchema'
+import { UserRespository } from '@jvega/repositories'
+import { ControllerBase } from './base/controllerBase'
 
 @Route('users')
-export class UsersController extends Controller {
+export class UsersController extends ControllerBase {
+  private readonly usersService: UsersService
+
+  constructor(){
+    super()
+    this.usersService = this.servicesConfiguration.userService
+  }
+
   @Get()
   public async getAll(): Promise<UserDto[]> {
-    return new UsersService().getAll()
+    return await this.usersService.getAll()
   }
 
   @Get('{userId}')
   public async getUser(
-    @Path() userId: number,
-    @Query() name?: string
-  ): Promise<UserDto> {
-    return new UsersService().get(userId, name)
+    @Path() userId: number
+  ): Promise<UserDto | null> {
+    return await this.usersService.get(userId)
   }
 
   @Middlewares<RequestHandler>(validateSchema(userSchema))
@@ -37,6 +45,6 @@ export class UsersController extends Controller {
     @Body() requestBody: UserDto 
   ): Promise<UserDto | null> {
     this.setStatus(201)
-    return new UsersService().create(requestBody)
+    return await this.usersService.create(requestBody)
   }
 }

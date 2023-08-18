@@ -36,10 +36,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.app = void 0;
+const services_1 = require("@jvega/services");
 const routes_1 = require("../build/routes");
 const express_1 = __importStar(require("express"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const tsoa_1 = require("tsoa");
+// establish database connection
+(0, services_1.startAppDataSource)();
 exports.app = (0, express_1.default)();
 exports.app.use((0, express_1.urlencoded)({
     extended: true,
