@@ -1,20 +1,17 @@
 
 import {
   Body,
-  Controller,
   Get,
   Path,
   Post,
-  Query,
   Route,
   SuccessResponse,
   Middlewares
 } from 'tsoa'
-import { ServicesConfiguration, UsersService } from '@jvega/services'
+import { UsersService } from '@jvega/services'
 import { UserDto, userSchema } from '@jvega/common'
 import { RequestHandler } from 'express'
 import { validateSchema } from '../middleware/validationSchema'
-import { UserRespository } from '@jvega/repositories'
 import { ControllerBase } from './base/controllerBase'
 
 @Route('users')

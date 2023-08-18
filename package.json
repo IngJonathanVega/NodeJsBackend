@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "serve": "yarn workspace @jvega/api serve"
+    "serve": "yarn workspace @jvega/api serve",
+    "serve:build": "yarn workspace @jvega/api build",
+    "lint": "npx eslint ."
   },
   "devDependencies": {
     "eslint": "^8.47.0",
@@ -15,6 +17,8 @@
     "zod": "^3.22.1"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "ts-node": "^10.9.1"
   }
 }

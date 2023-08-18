@@ -1,11 +1,10 @@
-import { UserDto } from "@jvega/common"
-import { UserRespository } from "@jvega/repositories"
+import { UserDto } from '@jvega/common'
+import { UserRespository } from '@jvega/repositories'
 
 export class UsersService {
-  constructor(private readonly userRespository: UserRespository){
-  }
+  constructor(private readonly userRespository: UserRespository) {}
 
-  public async getAll (): Promise<UserDto[]> {
+  public async getAll(): Promise<UserDto[]> {
     return await this.userRespository.getAll()
   }
 

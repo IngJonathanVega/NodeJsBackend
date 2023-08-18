@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import { z } from 'zod'
 
-function getSchemaErrors(schema: z.Schema<any>, data: any): any[] {
+function getSchemaErrors(schema: z.Schema<unknown>, data: unknown): unknown[] {
   try {
     schema.parse(data)
     return []
@@ -25,7 +25,7 @@ function getSchemaErrors(schema: z.Schema<any>, data: any): any[] {
   }
 }
 
-function validateSchema(schema: z.Schema<any>) {
+function validateSchema(schema: z.Schema<unknown>) {
   return async (req: Request, res: Response, next: NextFunction) => {
     const schemaErrors = getSchemaErrors(schema, req.body)
 
