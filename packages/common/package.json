@@ -4,5 +4,8 @@
   "license": "ISC",
   "exports": "./src/index.ts",
   "main": "./src/index.ts",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "zod": "^3.22.1"
+  }
 }

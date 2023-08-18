@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@jvega/repositories": "*",
-    "@jvega/common": "*"
+    "@jvega/common": "*",
+    "zod": "^3.22.1"
   }
 }

@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "description": "database access",
   "license": "ISC",
-  "exports": "./src/index.ts",
-  "main": "./src/index.ts",
-  "private": true
- }
+  "main": "./src/app.ts",
+  "private": true,
+  "dependencies": {
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0"
+  }
+}
